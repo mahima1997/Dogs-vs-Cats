@@ -141,7 +141,8 @@ network = fully_connected(network, 2, activation='softmax')
 acc = Accuracy(name="Accuracy")
 
 #The regression layer is used in TFLearn to apply a regression (linear or logistic) to the provided input.
-network = regression(network, optimizer='adam',
+network = regression(network, optimizer='adam', #adam: adaptive moment estimation #trainable_vars can also be added to update 
+		     				#some particular variables only while backpropogation.
                      loss='categorical_crossentropy', #this loss type is used only when the target variable is categorical
                      learning_rate=0.0005, metric=acc)
 #There are many ways to define a learning rate. It can be a function, or just a fixed number. 
