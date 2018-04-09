@@ -186,25 +186,3 @@ print("done")
 
 # To load this model for further predictions
 #model.load('model_cat_dog_6_final.tflearn')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
