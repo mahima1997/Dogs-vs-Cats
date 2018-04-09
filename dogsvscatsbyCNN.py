@@ -29,7 +29,8 @@ from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.estimator import regression
 from tflearn.data_preprocessing import ImagePreprocessing
-from tflearn.data_augmentation import ImageAugmentation
+from tflearn.data_augmentation import ImageAugmentation  #to increase the present training dataset by creating augmented
+							 #copies of present images.
 from tflearn.metrics import Accuracy
 
 ###Import picture files
@@ -75,7 +76,8 @@ for f in dog_files:
 
 X, X_test, Y, Y_test = train_test_split(allX, ally, test_size=0.1, random_state=42)
 Y = to_categorical(Y, 2)
-Y_test = to_categorical(Y_test, 2)
+Y_test = to_categorical(Y_test, 2) # to_categorical converts class vector (integers from 0 to nb_classes) to binary 
+				   #class matrix, for use with categorical_crossentropy.
 
 ###################################
 # Image transformations
