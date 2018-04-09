@@ -134,6 +134,8 @@ network = fully_connected(network, 512, activation='relu')
 # 7: Dropout layer to combat overfitting by dropping units (both hidden and visible) in a neural network.
 network = dropout(network, 0.5)
 
+######----require Output here---########
+
 # 8: Fully-connected layer with two outputs
 network = fully_connected(network, 2, activation='softmax')
 
@@ -157,7 +159,12 @@ network = regression(network, optimizer='adam', #adam: adaptive moment estimatio
 
 # Wrap the network in a model object
 model = tflearn.DNN(network, checkpoint_path='model_cat_dog_6.tflearn', max_checkpoints = 3,
-tensorboard_verbose = 3, tensorboard_dir='tmp/tflearn_logs/')	#DNN is Deep Neural Network
+tensorboard_verbose = 3, tensorboard_dir='tmp/tflearn_logs/')  #"/tmp/tflearn_logs/" is default tensorboard log directory.
+#tensorboard_verbose: Verbose level. It supports:
+# 0 - Loss, Accuracy. (Best Speed)
+# 1 - Loss, Accuracy, Gradients.
+# 2 - Loss, Accuracy, Gradients, Weights.
+# 3 - Loss, Accuracy, Gradients, Weights, Activations, Sparsity.(Best Visualization)
 
 #checkpoint_path: (str) -> Path to store model checkpoints. If None, no model checkpoint will be saved. Default: None.
 #Checkpoint is an approach where a snapshot of the state of the system is taken in case of system failure. If there is a problem,
