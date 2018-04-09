@@ -131,7 +131,7 @@ network = max_pool_2d(conv_3, 2)
 # 6: Fully-connected 512 node layer
 network = fully_connected(network, 512, activation='relu')
 
-# 7: Dropout layer to combat overfitting
+# 7: Dropout layer to combat overfitting by dropping units (both hidden and visible) in a neural network.
 network = dropout(network, 0.5)
 
 # 8: Fully-connected layer with two outputs
