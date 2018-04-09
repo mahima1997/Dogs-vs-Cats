@@ -107,7 +107,9 @@ img_aug.add_random_rotation(max_angle=25.)
 
 #Adding the above methods into an 'input_data' layer
 #Input is a 32x32 image with 3 color channels (red, green and blue)
-network = input_data(shape=[None, 64, 64, 3],
+network = input_data(shape=[None, 64, 64, 3], #An array or tuple representing input data shape. It is required if no 
+		                              #placeholder is provided. First element should be 'None' (representing 
+		                              #batch size), if not provided,it will be added automatically.
                      data_preprocessing=img_prep,
                      data_augmentation=img_aug)
 
