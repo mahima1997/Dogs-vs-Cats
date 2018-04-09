@@ -110,7 +110,7 @@ img_aug.add_random_rotation(max_angle=25.)
 network = input_data(shape=[None, 64, 64, 3], #An array or tuple representing input data shape. It is required if no 
 		                              #placeholder is provided. First element should be 'None' (representing 
 		                              #batch size), if not provided,it will be added automatically.
-                     data_preprocessing=img_prep,
+                     data_preprocessing=img_prep,  #to manage real time data preprocessing and augmentation while training.
                      data_augmentation=img_aug)
 
 # 1: Convolution layer with 32 filters, each 3x3x3
