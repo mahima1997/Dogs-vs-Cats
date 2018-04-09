@@ -165,6 +165,7 @@ tensorboard_verbose = 3, tensorboard_dir='tmp/tflearn_logs/')  #"/tmp/tflearn_lo
 # 1 - Loss, Accuracy, Gradients.
 # 2 - Loss, Accuracy, Gradients, Weights.
 # 3 - Loss, Accuracy, Gradients, Weights, Activations, Sparsity.(Best Visualization)
+#$ tensorboard --logdir='/tmp/tflearn_logs' can be run to visualize network and performance.
 
 #checkpoint_path: (str) -> Path to store model checkpoints. If None, no model checkpoint will be saved. Default: None.
 #Checkpoint is an approach where a snapshot of the state of the system is taken in case of system failure. If there is a problem,
